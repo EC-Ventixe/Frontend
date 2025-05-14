@@ -1,0 +1,39 @@
+.event-btns {
+  display: flex;
+
+  gap: 1rem;
+}
+
+.event-btn {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--gray-10);
+  height: 36px;
+  width: 110px;
+  color: var(--gray-90);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: var(--medium);
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  gap: 3px;
+  .event-btn-nr {
+    color: var(--gray-60);
+  }
+}
+
+.event-btn:hover {
+  background-color: var(--primary-100);
+  color: var(--gray-10);
+  .event-btn-nr {
+    color: var(--gray-10);
+  }
+}
+
+.event-btn.active {
+  background-color: var(--primary-100);
+  color: var(--gray-10);
+}

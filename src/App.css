@@ -1,0 +1,73 @@
+@media (max-width: 767px) {
+  .sidenav {
+    max-width: 100%;
+    display: none;
+  }
+}
+
+/*---------------------TABLETTE----------------------*/
+@media (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "side top" "side main" "side footer";
+    height: calc(100vh - 24px);
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    gap: 12px;
+  }
+  .sidenav {
+    max-width: 72px;
+    display: block;
+  }
+}
+
+/*---------------------DESKTOP----------------------*/
+@media (min-width: 1440px) {
+  .sidenav {
+    max-width: 223px;
+    display: block;
+  }
+  .logo-content {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3.5rem;
+    gap: 1rem;
+
+    h2 {
+      font-size: 24px;
+      font-weight: var(--font-medium);
+    }
+  }
+}
+
+.sidenav {
+  grid-area: side;
+  border-radius: 15px;
+  width: 223px;
+  background-color: var(--cool-gray-10);
+}
+
+.topnav {
+  grid-area: top;
+  height: 84px;
+  width: 1157px;
+  background-color: var(--gray-20);
+  border-radius: 15px;
+}
+.main {
+  grid-area: main;
+  width: 1157px;
+  height: 100%;
+  background-color: var(--gray-20);
+  border-radius: 15px;
+}
+
+.mainsetup {
+  padding: 24px;
+}

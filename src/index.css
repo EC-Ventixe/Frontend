@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  background-color: var(--gray-10);
+  --font-color: #000000;
+
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+  --extrabold: 800;
+  --black: 900;
+
+  --primary-110: #c256c7;
+  --primary-100: #f26cf9;
+  --primary-90: #f589fa;
+  --primary-50: #fcd3fe;
+  --primary-40: #fce2fe;
+  --primary-30: #fdedfe;
+
+  --secondary-110: #1c2346;
+  --secondary-100: #37437d;
+  --secondary-90: #5562a2;
+  --secondary-70: #707dbf;
+  --secondary-60: #abb4dd;
+  --secondary-50: #d3daf9;
+
+  --yellow-100: #ffca39;
+  --yellow-90: #ffefc3;
+
+  --gray-100: #1e1e20;
+  --gray-90: #434345;
+  --gray-80: #636365;
+  --gray-70: #777779;
+  --gray-60: #9f9fa1;
+  --gray-50: #c3c3c4;
+  --gray-40: #e0e0e1;
+  --gray-30: #ededed;
+  --gray-20: #f7f7f7;
+  --gray-10: #ffffff;
+
+  --cool-gray-100: #131314;
+  --cool-gray-90: #39393d;
+  --cool-gray-80: #56565c;
+  --cool-gray-70: #72737a;
+  --cool-gray-60: #8f8f99;
+  --cool-gray-50: #b0b1bd;
+  --cool-gray-40: #d1d2e0;
+  --cool-gray-30: #dddeed;
+  --cool-gray-20: #e4e5f5;
+  --cool-gray-10: #eeefff;
+}
+
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  color: var(--font-color);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Structure */
+
+.container {
+  background-color: var(--background-color);
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
