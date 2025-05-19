@@ -16,3 +16,13 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.dashboard-card-container {
+  display: flex;
+  gap: 2rem;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}

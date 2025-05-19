@@ -12,26 +12,26 @@ import Dashboard from "./assets/pages/Dashboard/Dashboard";
 import Navbar from "./assets/components/Navbar/Navbar";
 import Topbar from "./assets/components/Topbar/Topbar";
 import Footer from "./assets/components/Footer/Footer";
-import Signup from "./assets/pages/Login/Signup";
-import Layout from "./Layout";
-import Login from "./assets/pages/Login/Login";
 
-function App() {
+function Layout() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/bookings" element={<Bookings />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div className="container">
+      <div className="hero">
+        <div className="sidenav">
+          <Navbar />
+        </div>
+        <div className="topnav">
+          <Topbar />
+        </div>
+        <div className="main">
+          <Outlet />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default App;
+export default Layout;

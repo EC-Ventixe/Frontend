@@ -28,7 +28,7 @@
 /*---------------------DESKTOP----------------------*/
 @media (min-width: 1440px) {
   .sidenav {
-    max-width: 223px;
+    max-width: 187px;
     display: block;
   }
   .logo-content {

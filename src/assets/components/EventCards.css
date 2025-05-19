@@ -17,3 +17,45 @@
     border-radius: 15px 15px 0px 0px;
   }
 }
+
+.eventcards-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 1rem;
+}
+
+.eventcards-event-name {
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+}
+
+.eventcards-location-city {
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 0.5rem;
+  color: var(--cool-gray-80);
+}
+.eventcards-date-price {
+  grid-row: 3 / 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  i {
+    color: var(--cool-gray-70);
+    font-size: 18px;
+  }
+}
+
+.event-price {
+  font-size: 28px;
+  font-weight: var(--bold);
+  color: var(--primary-100);
+}

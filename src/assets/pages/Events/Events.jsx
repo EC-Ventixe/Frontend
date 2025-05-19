@@ -1,6 +1,19 @@
 import AddEventOverlay from "../../components/AddEvent";
+import EventCards from "../../components/EventCards";
+import { useEffect, useState } from "react";
 
 function Events() {
+  const url = "https://localhost:7174/api/event/getevents";
+  const [data, setData] = useState([]);
+  const fetchInfo = async () => {
+    return await fetch(url)
+      .then((res) => res.json())
+      .then((d) => setData(d));
+  };
+  useEffect(() => {
+    fetchInfo();
+  }, []);
+
   return (
     <div>
       <div className="mainsetup">
@@ -19,8 +32,13 @@ function Events() {
             <span className="event-btn-nr">(32)</span>
           </div>
           <div className="add-event-btn">
-            <AddEventOverlay />
+            <AddEventOverlay fetchinfo={fetchInfo} />
           </div>
+        </div>
+        <div className="event-head-container">
+          {data.map((dataObj) => (
+            <EventCards key={dataObj.id} dataObj={dataObj} />
+          ))}
         </div>
       </div>
     </div>

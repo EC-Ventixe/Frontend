@@ -1,6 +1,8 @@
 import cookie from "../../../../public/images/COOKIE.jpeg";
 
 function Topbar() {
+  const userEmail = localStorage.getItem("userEmail");
+
   return (
     <div className="topbar-content">
       <div className="topbar-dashboard-content">
@@ -29,7 +31,9 @@ function Topbar() {
           <img src={cookie} alt="User" className="user-logo" />
         </div>
         <div className="topbar-user">
-          <span className="topbar-user-text">Ulf Gudmundsson</span>
+          <span className="topbar-user-text">
+            {userEmail ? `${userEmail}` : "Not logged in"}
+          </span>
           <span>Admin</span>
         </div>
       </div>

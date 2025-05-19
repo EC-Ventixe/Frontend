@@ -1,20 +1,46 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function AddEventOverlay() {
+function AddEventOverlay({ fetchinfo }) {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [eventName, setEventName] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
-  const [price, setPrice] = useState("");
+  const [city, setCity] = useState("");
+  const [startdate, setStartDate] = useState("");
+  const [enddate, setEndDate] = useState("");
+  const [ticketstarttime, setTicketStartTime] = useState("");
+  const navigate = useNavigate();
 
   const toggleOverlay = () => {
     setIsOverlayVisible(!isOverlayVisible);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     toggleOverlay();
+    const eventData = {
+      eventName,
+      description,
+      location,
+      city,
+      startdate,
+      enddate,
+      ticketstarttime,
+    };
+    console.log("Event Data:", eventData);
+    const resp = await fetch("https://localhost:7174/api/event/addevent", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventData),
+    });
+
+    if (resp.ok) {
+      fetchinfo();
+      navigate("/events");
+    }
   };
 
   return (
@@ -45,26 +71,14 @@ function AddEventOverlay() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="Date">Date</label>
-                  <input
+                  <label htmlFor="description">Description</label>
+                  <textarea
                     className="form-input"
-                    type="date"
-                    id="Date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="Time">Time</label>
-                  <input
-                    className="form-input"
-                    type="time"
-                    id="Time"
-                    value={time}
-                    onChange={(e) => setTime(e.target.value)}
-                    required
-                  />
+                    placeholder="Enter Description for Event"
+                    id="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></textarea>
                 </div>
                 <div className="form-group">
                   <label htmlFor="Date">Location</label>
@@ -79,14 +93,47 @@ function AddEventOverlay() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="Date">Price</label>
+                  <label htmlFor="City">City</label>
                   <input
                     className="form-input"
-                    placeholder="$0.00"
-                    type="number"
-                    id="price"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="Enter City for Event"
+                    type="text"
+                    id="city"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="startdate">Start Date</label>
+                  <input
+                    className="form-input"
+                    type="datetime-local"
+                    id="startdate"
+                    value={startdate}
+                    onChange={(e) => setStartDate(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="enddate">End Date</label>
+                  <input
+                    className="form-input"
+                    type="datetime-local"
+                    id="enddate"
+                    value={enddate}
+                    onChange={(e) => setEndDate(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="ticketstarttime">Ticket Start Time</label>
+                  <input
+                    className="form-input"
+                    type="datetime-local"
+                    id="ticketstarttime"
+                    value={ticketstarttime}
+                    onChange={(e) => setTicketStartTime(e.target.value)}
                     required
                   />
                 </div>
