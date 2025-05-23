@@ -1,0 +1,65 @@
+.booking-card {
+  background-color: var(--cool-gray-20);
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 256px;
+  border-radius: 20px;
+}
+.card-grid {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.card-dotted {
+  border-right: 2px dashed var(--gray-20);
+  width: 1px;
+  height: 225px;
+  margin-top: 15px;
+}
+
+.card-dot-left1 {
+  top: -25px;
+  left: 256px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-20);
+  border-radius: 50%;
+}
+
+.card-dot-left2 {
+  bottom: -40px;
+  left: 256px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-20);
+  border-radius: 50%;
+}
+
+.card-dot-right1 {
+  top: -25px;
+  right: 256px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-20);
+  border-radius: 50%;
+}
+
+.card-dot-right2 {
+  bottom: -40px;
+  right: 256px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray-20);
+  border-radius: 50%;
+}
+
+.scan-code {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}

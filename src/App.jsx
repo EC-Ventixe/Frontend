@@ -9,12 +9,10 @@ import "./assets/pages/Dashboard/dashboard.css";
 import Events from "./assets/pages/Events/Events";
 import Bookings from "./assets/pages/Bookings/Bookings";
 import Dashboard from "./assets/pages/Dashboard/Dashboard";
-import Navbar from "./assets/components/Navbar/Navbar";
-import Topbar from "./assets/components/Topbar/Topbar";
-import Footer from "./assets/components/Footer/Footer";
 import Signup from "./assets/pages/Login/Signup";
 import Layout from "./Layout";
 import Login from "./assets/pages/Login/Login";
+import BookingsOverlay from "./assets/components/Modals/BookingModal";
 
 function App() {
   return (
@@ -26,6 +24,8 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/bookingModal/" element={<BookingsOverlay />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/bookings" element={<Bookings />} />
           </Route>
         </Routes>

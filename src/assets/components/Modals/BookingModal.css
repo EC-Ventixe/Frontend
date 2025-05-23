@@ -1,4 +1,4 @@
-.overlay {
+.booking-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,17 +11,17 @@
   z-index: 1000;
 }
 
-.overlay-content {
+.booking-overlay-content {
   background-color: var(--gray-10);
   position: fixed;
   top: 15%;
   left: 45%;
   padding: 30px;
   border-radius: 20px;
-  width: 400px;
-  height: 750px;
+  width: 370px;
+  height: 200px;
   h2 {
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -38,24 +38,7 @@ button.close-btn {
 .add-event-btn {
   padding-left: 10rem;
 }
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  padding-top: 14px;
-  gap: 4px;
-}
-
-.form-input {
-  border-radius: 10px;
-  border: 2px solid var(--gray-50);
-  width: 100%;
-  height: 40px;
-  outline: none;
-  padding-left: 5px;
-}
-
-.submit-btn {
+.booking-submit-btn {
   background-color: var(--primary-110);
   color: var(--gray-10);
   border-radius: 10px;
@@ -66,5 +49,36 @@ button.close-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
+}
+
+.eventcards-booking-btn {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+.booking-btn {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--gray-10);
+  opacity: 0.6;
+  height: 32px;
+  width: 90px;
+  color: var(--gray-90);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: var(--medium);
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  gap: 3px;
+}
+.booking-btn:hover {
+  background-color: var(--primary-110);
+  color: var(--gray-10);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }

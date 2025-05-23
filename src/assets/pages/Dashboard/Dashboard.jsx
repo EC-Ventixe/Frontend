@@ -4,6 +4,7 @@ import EventCards from "../../components/EventCards";
 import "../../components/EventCards.css";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import "../Bookings/Bookings.css";
 
 function Dashboard() {
   const url = "https://localhost:7174/api/event/getevents";
@@ -16,6 +17,10 @@ function Dashboard() {
   useEffect(() => {
     fetchInfo();
   }, []);
+
+  const sortedData = [...data].sort(
+    (a, b) => new Date(b.eventDate) - new Date(a.eventDate)
+  );
   return (
     <div className="mainsetup">
       <div className="dashboard-grid">
@@ -29,8 +34,8 @@ function Dashboard() {
             </NavLink>
           </div>
         </div>
-        <div className="event-card-container">
-          {data.map((dataObj) => (
+        <div className="dashboard-card-container">
+          {sortedData.slice(0, 3).map((dataObj) => (
             <EventCards key={dataObj.id} dataObj={dataObj} />
           ))}
         </div>

@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import cookie from "../../../../public/images/COOKIE.jpeg";
+import { AuthContext } from "../../Context/AuthContext";
 
 function Topbar() {
-  const userEmail = localStorage.getItem("userEmail");
+  const { getUserEmail } = useContext(AuthContext);
+  const userEmail = getUserEmail();
 
   return (
     <div className="topbar-content">
@@ -9,7 +12,7 @@ function Topbar() {
         <div>
           <h2>Dashboard</h2>
           <span className="topbar-dashboard-text">
-            Hello Ulf Gudmundsson, welcome back!
+            Hello {userEmail ? `${userEmail}` : "Not logged in"}, welcome back!
           </span>
         </div>
       </div>
