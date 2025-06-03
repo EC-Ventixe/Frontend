@@ -1,5 +1,4 @@
 import "./BookingCards.css";
-import ticketimg from "../../../../public/images/ticket.svg";
 import scancode from "../../../../public/images/scancode.svg";
 
 function BookingCards({ dataObj }) {

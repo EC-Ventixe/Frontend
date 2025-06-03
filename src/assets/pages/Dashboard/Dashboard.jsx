@@ -2,10 +2,8 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import EventCards from "../../components/EventCards";
 import "../../components/EventCards.css";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 import "../Bookings/Bookings.css";
-import "./dashboard.css";
+import "./Dashboard.css";
 
 function Dashboard() {
   const url = "https://localhost:7174/api/event/getevents";

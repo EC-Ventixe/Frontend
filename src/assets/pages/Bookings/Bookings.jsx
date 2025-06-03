@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import BookingCards from "../Bookings/BookingCards";
+import "./Bookings.css";
 
 function Bookings() {
   const { getUserId } = useContext(AuthContext);
