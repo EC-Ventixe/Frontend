@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import "./Events.css";
 
 function Events() {
-  const url = "https://localhost:7174/api/event/getevents";
+  const url =
+    "https://ventixeeventserviceapp.azurewebsites.net/api/event/getevents";
   const [data, setData] = useState([]);
   const fetchInfo = async () => {
     return await fetch(url)

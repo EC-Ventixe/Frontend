@@ -11,16 +11,19 @@ function Signup() {
 
   const clickLogin = async (e) => {
     e.preventDefault();
-    const resp = await fetch("https://localhost:7204/api/account/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
+    const resp = await fetch(
+      "https://ventixeaccountserivceapp.azurewebsites.net/api/account/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      }
+    );
 
     if (resp.ok) {
       navigate("/login");

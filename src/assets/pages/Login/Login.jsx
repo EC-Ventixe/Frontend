@@ -12,16 +12,19 @@ function Login() {
 
   const clickLogin = async (e) => {
     e.preventDefault();
-    const resp = await fetch("https://localhost:7204/api/account/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
+    const resp = await fetch(
+      "https://ventixeaccountserivceapp.azurewebsites.net/api/account/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      }
+    );
     if (resp.status === 200) {
       const data = await resp.json();
       login(data.token);
