@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import cookie from "../../../../public/images/COOKIE.jpeg";
 import { AuthContext } from "../../Context/AuthContext";
+import "./topbar.css";
 
 function Topbar() {
   const { getUserEmail } = useContext(AuthContext);

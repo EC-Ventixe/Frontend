@@ -1,11 +1,6 @@
 import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 
-import "./assets/components/Topbar/topbar.css";
-import "./assets/components/Footer/footer.css";
-import "./assets/pages/Events/events.css";
-import "./assets/components/addEvent.css";
-import "./assets/pages/Dashboard/dashboard.css";
 import Events from "./assets/pages/Events/Events";
 import Bookings from "./assets/pages/Bookings/Bookings";
 import Dashboard from "./assets/pages/Dashboard/Dashboard";

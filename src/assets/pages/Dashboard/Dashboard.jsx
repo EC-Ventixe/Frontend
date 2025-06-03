@@ -5,6 +5,7 @@ import "../../components/EventCards.css";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../Bookings/Bookings.css";
+import "./dashboard.css";
 
 function Dashboard() {
   const url = "https://localhost:7174/api/event/getevents";

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./addEvent.css";
 
 function AddEventOverlay({ fetchinfo }) {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
