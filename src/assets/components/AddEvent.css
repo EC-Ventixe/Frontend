@@ -19,7 +19,7 @@
   padding: 30px;
   border-radius: 20px;
   width: 400px;
-  height: 750px;
+  height: 870px;
   h2 {
     padding-bottom: 3rem;
   }
@@ -66,5 +66,5 @@ button.close-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }

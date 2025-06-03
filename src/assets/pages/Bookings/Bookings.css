@@ -1,5 +1,9 @@
 .bookings-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.bookings-header {
+  margin-bottom: 3rem;
 }

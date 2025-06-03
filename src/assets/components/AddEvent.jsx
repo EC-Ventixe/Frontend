@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 function AddEventOverlay({ fetchinfo }) {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [eventName, setEventName] = useState("");
-  const [description, setDescription] = useState("");
+  const [eventDescription, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [city, setCity] = useState("");
   const [startdate, setStartDate] = useState("");
   const [enddate, setEndDate] = useState("");
   const [ticketstarttime, setTicketStartTime] = useState("");
+  const [ticketPrice, setTicketPrice] = useState("");
+  const [ticketAmount, setTicketAmount] = useState("");
   const navigate = useNavigate();
 
   const toggleOverlay = () => {
@@ -21,12 +23,14 @@ function AddEventOverlay({ fetchinfo }) {
     toggleOverlay();
     const eventData = {
       eventName,
-      description,
+      eventDescription,
       location,
       city,
       startdate,
       enddate,
       ticketstarttime,
+      ticketPrice,
+      ticketAmount,
     };
     console.log("Event Data:", eventData);
     const resp = await fetch("https://localhost:7174/api/event/addevent", {
@@ -76,7 +80,7 @@ function AddEventOverlay({ fetchinfo }) {
                     className="form-input"
                     placeholder="Enter Description for Event"
                     id="description"
-                    value={description}
+                    value={eventDescription}
                     onChange={(e) => setDescription(e.target.value)}
                   ></textarea>
                 </div>
@@ -134,6 +138,32 @@ function AddEventOverlay({ fetchinfo }) {
                     id="ticketstarttime"
                     value={ticketstarttime}
                     onChange={(e) => setTicketStartTime(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="ticketprice">Ticket Price</label>
+                  <input
+                    className="form-input"
+                    placeholder="Enter Price for Ticket"
+                    type="number"
+                    id="ticketPrice"
+                    value={ticketPrice}
+                    onChange={(e) => setTicketPrice(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="ticketamount">
+                    Amount of Tickets for Event
+                  </label>
+                  <input
+                    className="form-input"
+                    placeholder="Enter amount of tickets for Event"
+                    type="number"
+                    id="TicketAmount"
+                    value={ticketAmount}
+                    onChange={(e) => setTicketAmount(e.target.value)}
                     required
                   />
                 </div>

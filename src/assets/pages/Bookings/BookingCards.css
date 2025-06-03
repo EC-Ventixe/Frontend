@@ -1,26 +1,33 @@
 .booking-card {
   background-color: var(--cool-gray-20);
-  margin-top: 1.5rem;
   width: 100%;
   height: 256px;
   border-radius: 20px;
 }
 .card-grid {
   display: flex;
-  justify-content: space-around;
   position: relative;
 }
-
-.card-dotted {
+.card-dashed {
+  position: absolute;
   border-right: 2px dashed var(--gray-20);
   width: 1px;
   height: 225px;
   margin-top: 15px;
+  left: 350px;
+}
+.card-dashed2 {
+  position: absolute;
+  border-right: 2px dashed var(--gray-20);
+  width: 1px;
+  height: 225px;
+  margin-top: 15px;
+  left: 832px;
 }
 
 .card-dot-left1 {
   top: -25px;
-  left: 256px;
+  left: 331px;
   position: absolute;
   width: 40px;
   height: 40px;
@@ -29,8 +36,8 @@
 }
 
 .card-dot-left2 {
-  bottom: -40px;
-  left: 256px;
+  bottom: -25px;
+  left: 331px;
   position: absolute;
   width: 40px;
   height: 40px;
@@ -49,7 +56,7 @@
 }
 
 .card-dot-right2 {
-  bottom: -40px;
+  bottom: -25px;
   right: 256px;
   position: absolute;
   width: 40px;
@@ -58,8 +65,99 @@
   border-radius: 50%;
 }
 
+.card-line {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+  border-bottom: solid 1px var(--gray-10);
+  width: 450px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .scan-code {
   position: absolute;
   right: 25px;
   top: 15px;
+}
+
+.card-info {
+  display: grid;
+  width: 100%;
+  height: 256px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.bg-event-box {
+  grid-column: 1 / 2;
+  grid-row: 1 / 5;
+  background: #1c2346;
+  background: linear-gradient(
+    0deg,
+    rgba(28, 35, 70, 0.88) 0%,
+    rgba(224, 224, 225, 1) 26%
+  );
+  margin: 12px;
+  width: 325px;
+  height: 230px;
+  border-radius: 15px;
+}
+.card-name {
+  color: var(--gray-10);
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 30px;
+}
+
+.card-ticket-category {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-ticket-name {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.card-id {
+  grid-column: 3 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.card-location {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-date {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-time {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-date-time {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  display: flex;
+  justify-content: space-between;
 }

@@ -22,33 +22,48 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .eventcards-event-name {
-  grid-row: 1 / 2;
+  grid-row: 2 / 3;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   justify-content: space-between;
+  gap: 0.6rem;
 }
 
 .eventcards-location-city {
   grid-row: 2 / 3;
   display: flex;
   gap: 0.5rem;
-  color: var(--cool-gray-80);
+  color: var(--cool-gray-70);
+  i {
+    color: var(--cool-gray-70);
+    font-size: 18px;
+  }
 }
-.eventcards-date-price {
+.eventcards-tickets-price {
   grid-row: 3 / 4;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--cool-gray-70);
 }
-
-.event-date {
+.eventcards-date-time {
+  grid-row: 1 / 2;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+  color: var(--cool-gray-70);
+}
+
+.event-tickets-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   i {
     color: var(--cool-gray-70);
     font-size: 18px;

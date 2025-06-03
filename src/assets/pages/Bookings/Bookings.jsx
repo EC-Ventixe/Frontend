@@ -49,7 +49,9 @@ function Bookings() {
   return (
     <div>
       <div className="mainsetup">
-        <h2>Your Bookings</h2>
+        <div className="bookings-header">
+          <h2>Your Bookings</h2>
+        </div>
         {bookingsWithEvent.length === 0 ? (
           <p>No bookings found.</p>
         ) : (

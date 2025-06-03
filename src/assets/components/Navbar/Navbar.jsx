@@ -38,6 +38,12 @@ function Navbar() {
               <span className="nav-btn"> Bookings</span>
             </NavLink>
           </li>
+          <li>
+            <NavLink className="nav-item" to="/profile">
+              <i class="fa-light fa-user"></i>
+              <span className="nav-btn"> Your Profile</span>
+            </NavLink>
+          </li>
         </ul>
       </div>
       {isAuthenticated && (

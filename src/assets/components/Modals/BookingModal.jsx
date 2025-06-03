@@ -67,15 +67,20 @@ function BookingModal({ dataObj }) {
             <button className="close-btn" onClick={toggleOverlay}>
               Close
             </button>
-            <h2>Your Ticket</h2>
+            <h2>Your Ticket for</h2>
             <div className="form-layout">
               <form onSubmit={handleSubmit}>
                 <div>
                   <div>
-                    <span>Event Name: {dataObj.eventName}</span>
+                    <span>
+                      Event <br></br>
+                      {dataObj.eventName}
+                    </span>
+                    <br></br>
                     <br></br>
                     <span>
-                      Location: {dataObj.city}, {dataObj.location}
+                      Location <br></br>
+                      {dataObj.city}, {dataObj.location}
                     </span>
                   </div>
                   <button className="booking-submit-btn " type="submit">

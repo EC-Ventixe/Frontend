@@ -37,7 +37,11 @@ function Events() {
         </div>
         <div className="event-head-container">
           {data.map((dataObj) => (
-            <EventCards key={dataObj.id} dataObj={dataObj} />
+            <EventCards
+              key={dataObj.event.id}
+              dataObj={dataObj.event}
+              ticket={dataObj.ticket}
+            />
           ))}
         </div>
       </div>

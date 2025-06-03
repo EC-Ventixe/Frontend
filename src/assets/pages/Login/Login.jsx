@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import "./LoginLayout.css";
+import ventixelogo from "../../../../public/images/Symbol.svg";
 
 function Login() {
   const { login } = useContext(AuthContext);
@@ -31,10 +32,19 @@ function Login() {
     <>
       <div className="login-container">
         <div className="login-form">
-          <div className="login-header">
-            <div className="login-logo">
-              <i className="fa-light fa-circle-user"></i>
+          <div className="login-logo">
+            <i className="fa-light fa-circle-user"></i>
+          </div>
+          <div className="login-ventixe-img">
+            <div className="img-container">
+              <img src={ventixelogo} alt="Ventixe Logo" />
+              <span>Ventixe</span>
             </div>
+            <div className="ventixe-slogan">
+              <span>Click. Book. Party!</span>
+            </div>
+          </div>
+          <div className="login-header">
             <span>LOGIN</span>
           </div>
           <form className="form-group" onSubmit={clickLogin}>
@@ -66,7 +76,7 @@ function Login() {
                 required
               />
             </div>
-            <button className="signup-btn" type="submit" id="login-btn">
+            <button className="login-btn" type="submit" id="login-btn">
               LOGIN
             </button>
             <div className="login-footer">

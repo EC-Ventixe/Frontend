@@ -13,6 +13,7 @@ import Signup from "./assets/pages/Login/Signup";
 import Layout from "./Layout";
 import Login from "./assets/pages/Login/Login";
 import BookingsOverlay from "./assets/components/Modals/BookingModal";
+import Profile from "./assets/pages/Profile/Profile";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/bookingModal/" element={<BookingsOverlay />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/bookings" element={<Bookings />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -26,7 +26,7 @@ function Dashboard() {
       <div className="dashboard-grid">
         <div className="dashboard-header">
           <div>
-            <h3>All Events</h3>
+            <h2>Latest Events</h2>
           </div>
           <div>
             <NavLink className="view-btn" to="/events">
@@ -36,7 +36,11 @@ function Dashboard() {
         </div>
         <div className="dashboard-card-container">
           {sortedData.slice(0, 3).map((dataObj) => (
-            <EventCards key={dataObj.id} dataObj={dataObj} />
+            <EventCards
+              key={dataObj.event.id}
+              dataObj={dataObj.event}
+              ticket={dataObj.ticket}
+            />
           ))}
         </div>
       </div>
