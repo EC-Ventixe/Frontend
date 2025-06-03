@@ -1,7 +1,8 @@
 import AddEventOverlay from "../../components/AddEvent";
 import EventCards from "../../components/EventCards";
 import { useEffect, useState } from "react";
-import "./events.css";
+import "@/assets/pages/Events/Events.css";
+
 function Events() {
   const url = "https://localhost:7174/api/event/getevents";
   const [data, setData] = useState([]);
