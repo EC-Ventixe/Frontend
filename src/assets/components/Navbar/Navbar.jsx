@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../../../public/images/Symbol.svg";
-import Dashboard from "../../pages/Dashboard/Dashboard";
-import Events from "../../pages/Events/Events";
-import Bookings from "../../pages/Bookings/Bookings";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext.jsx";
+import "./navbar.css";
 
 function Navbar() {
   const { isAuthenticated, logout, login } = useContext(AuthContext);
