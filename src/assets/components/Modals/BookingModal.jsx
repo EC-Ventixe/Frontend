@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./BookingModal.css";
 
 function BookingModal({ dataObj }) {
   const [isOverlayBooking, setIsOverlayBooking] = useState(false);

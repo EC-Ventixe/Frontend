@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../../../public/images/Symbol.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext.jsx";
-import "./navbar.css";
+import "./Navbar.css";
 
 function Navbar() {
   const { isAuthenticated, logout, login } = useContext(AuthContext);
