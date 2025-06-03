@@ -1,6 +1,6 @@
 import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
 import "./App.css";
-import "./assets/components/Navbar/navbar.css";
+
 import "./assets/components/Topbar/topbar.css";
 import "./assets/components/Footer/footer.css";
 import "./assets/pages/Events/events.css";
