@@ -34,13 +34,16 @@ function AddEventOverlay({ fetchinfo }) {
       ticketAmount,
     };
     console.log("Event Data:", eventData);
-    const resp = await fetch("https://localhost:7174/api/event/addevent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(eventData),
-    });
+    const resp = await fetch(
+      "https://ventixeeventserviceapp.azurewebsites.net/api/event/addevent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(eventData),
+      }
+    );
 
     if (resp.ok) {
       fetchinfo();

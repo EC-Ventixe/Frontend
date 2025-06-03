@@ -6,7 +6,8 @@ import "../Bookings/Bookings.css";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const url = "https://localhost:7174/api/event/getevents";
+  const url =
+    "https://ventixeeventserviceapp.azurewebsites.net/api/event/getevents";
   const [data, setData] = useState([]);
   const fetchInfo = async () => {
     return await fetch(url)

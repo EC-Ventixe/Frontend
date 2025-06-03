@@ -22,7 +22,7 @@ function BookingModal({ dataObj }) {
   const fetchUserId = async (id) => {
     try {
       const resp = await fetch(
-        `https://localhost:7204/api/account/getuser/${id}`
+        `https://ventixeaccountserivceapp.azurewebsites.net/api/account/getuser/${id}`
       );
 
       if (resp.ok) {
@@ -38,13 +38,16 @@ function BookingModal({ dataObj }) {
   };
 
   const postBooking = async () => {
-    const response = await fetch("https://localhost:7093/api/booking/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const response = await fetch(
+      "https://ventixebookingserviceapp.azurewebsites.net/api/booking/create",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
     if (response.ok) {
       navigate("/bookings");
     }

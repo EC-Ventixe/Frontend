@@ -7,8 +7,10 @@ function Bookings() {
   const { getUserId } = useContext(AuthContext);
   const userId = getUserId();
 
-  const bookingsUrl = "https://localhost:7093/api/booking/all";
-  const eventUrl = "https://localhost:7174/api/event/getevent";
+  const bookingsUrl =
+    "https://ventixebookingserviceapp.azurewebsites.net/api/booking/all";
+  const eventUrl =
+    "https://ventixeeventserviceapp.azurewebsites.net/api/event/getevent";
 
   const [userBookings, setUserBookings] = useState([]);
   const [bookingsWithEvent, setBookingsWithEvent] = useState([]);
