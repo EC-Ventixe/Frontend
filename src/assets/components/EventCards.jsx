@@ -36,7 +36,7 @@ function EventCards({ dataObj, ticket }) {
               <h3>{dataObj.eventName}</h3>
             </div>
             <div className="eventcards-location-city">
-              <i class="fa-light fa-location-dot"></i>
+              <i className="fa-light fa-location-dot"></i>
               <span>{dataObj.city}, </span>
               <span> {dataObj.location} </span>
             </div>

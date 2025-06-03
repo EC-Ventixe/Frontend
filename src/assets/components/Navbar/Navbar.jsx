@@ -38,7 +38,7 @@ function Navbar() {
           </li>
           <li>
             <NavLink className="nav-item" to="/profile">
-              <i class="fa-light fa-user"></i>
+              <i className="fa-light fa-user"></i>
               <span className="nav-btn"> Your Profile</span>
             </NavLink>
           </li>

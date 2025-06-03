@@ -4,38 +4,41 @@ import { useNavigate } from "react-router-dom";
 import "./BookingModal.css";
 
 function BookingModal({ dataObj }) {
+  const { getUserId } = useContext(AuthContext);
   const [isOverlayBooking, setIsOverlayBooking] = useState(false);
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ eventId: dataObj.id, userId: "" });
-  const { getUserId } = useContext(AuthContext);
+  const [formData, setFormData] = useState({
+    eventId: dataObj.id,
+    userId: getUserId(),
+  });
 
   const toggleOverlay = () => {
     setIsOverlayBooking(!isOverlayBooking);
   };
 
-  useEffect(() => {
-    if (!isOverlayBooking) return;
-    const id = getUserId();
-    fetchUserId(id);
-  });
+  // useEffect(() => {
+  //   if (!isOverlayBooking) return;
+  //   const id = getUserId();
+  //   fetchUserId(id);
+  // });
 
-  const fetchUserId = async (id) => {
-    try {
-      const resp = await fetch(
-        `https://ventixeaccountserivceapp.azurewebsites.net/api/account/getuser/${id}`
-      );
+  // const fetchUserId = async (id) => {
+  //   try {
+  //     const resp = await fetch(
+  //       `https://ventixeaccountserivceapp.azurewebsites.net/api/account/getuser/${id}`
+  //     );
 
-      if (resp.ok) {
-        const data = await resp.json();
-        setFormData((prev) => ({
-          ...prev,
-          userId: data.id,
-        }));
-      }
-    } catch (error) {
-      console.error("Error fetching user ID:", error);
-    }
-  };
+  //     if (resp.ok) {
+  //       const data = await resp.json();
+  //       setFormData((prev) => ({
+  //         ...prev,
+  //         userId: data.id,
+  //       }));
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching user ID:", error);
+  //   }
+  // };
 
   const postBooking = async () => {
     const response = await fetch(
