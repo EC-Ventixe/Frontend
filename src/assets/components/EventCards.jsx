@@ -23,7 +23,9 @@ function EventCards({ dataObj, ticket }) {
       <div className="eventcards">
         <div className="eventcards-img">
           <div className="eventcards-booking-btn">
-            <BookingModal dataObj={dataObj} />
+            <div>
+              <BookingModal dataObj={dataObj} />
+            </div>
           </div>
           <img className="img" src={eventimg} alt="Event" />
         </div>

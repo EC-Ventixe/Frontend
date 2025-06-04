@@ -29,13 +29,15 @@ function BookingCards({ dataObj }) {
                 <h3>{dataObj.event.eventName}</h3>
                 <span>{dataObj.event.eventDescription}</span>
               </div>
-              <div className="card-ticket-name">
-                <h5>Name</h5>
-                <span></span>
-              </div>
-              <div className="card-id">
-                <h5>Id</h5>
-                <span>{dataObj.id}</span>
+              <div className="card-id-name">
+                <div className="card-ticket-name">
+                  <h5>Name</h5>
+                  <span></span>
+                </div>
+                <div className="card-id">
+                  <h5>Id</h5>
+                  <span>{dataObj.id}</span>
+                </div>
               </div>
               <div className="card-ticket-category">
                 <h5>Ticket Category</h5>

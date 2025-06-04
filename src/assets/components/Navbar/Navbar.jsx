@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/AuthContext.jsx";
 import "./Navbar.css";
 
 function Navbar() {
-  const { isAuthenticated, logout, login } = useContext(AuthContext);
+  const { isAuthenticated, logout } = useContext(AuthContext);
   return (
     <div className="sidenav-container">
       <div>
@@ -30,17 +30,36 @@ function Navbar() {
               <span className="nav-btn">Events</span>
             </NavLink>
           </li>
+
           <li>
-            <NavLink className="nav-item" to="/bookings">
-              <i className="fa-light fa-square-check"></i>
-              <span className="nav-btn"> Bookings</span>
-            </NavLink>
+            {isAuthenticated && (
+              <NavLink className="nav-item" to="/bookings">
+                <i className="fa-light fa-square-check"></i>
+                <span className="nav-btn"> Bookings</span>
+              </NavLink>
+            )}
+            {!isAuthenticated && (
+              <div className="nav-item" to="/bookings">
+                <i className="fa-light fa-square-check"></i>
+                <span className="nav-btn"> Bookings</span>
+                <i class="fa-regular fa-lock-keyhole"></i>
+              </div>
+            )}
           </li>
           <li>
-            <NavLink className="nav-item" to="/profile">
-              <i className="fa-light fa-user"></i>
-              <span className="nav-btn"> Your Profile</span>
-            </NavLink>
+            {isAuthenticated && (
+              <NavLink className="nav-item" to="/profile">
+                <i className="fa-light fa-user"></i>
+                <span className="nav-btn"> Your Profile</span>
+              </NavLink>
+            )}
+            {!isAuthenticated && (
+              <div className="nav-item" to="/profile">
+                <i className="fa-light fa-user"></i>
+                <span className="nav-btn">Profile</span>
+                <i class="fa-regular fa-lock-keyhole"></i>
+              </div>
+            )}
           </li>
         </ul>
       </div>
