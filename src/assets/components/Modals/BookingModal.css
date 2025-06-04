@@ -58,6 +58,13 @@ button.close-btn {
   margin-left: 150px;
 }
 
+.eventcards-booking-btn-signin {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 70px;
+  color: #ffffff;
+}
+
 .booking-btn {
   display: flex;
   flex-direction: row;

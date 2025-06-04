@@ -1,8 +1,11 @@
 import eventimg from "../../../public/images/sampleevent.jpg";
 import "../components/Modals/BookingModal.css";
 import BookingModal from "./Modals/BookingModal";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext.jsx";
 
 function EventCards({ dataObj, ticket }) {
+  const { isAuthenticated } = useContext(AuthContext);
   let dateStr = "";
   let timeStr = "";
   if (dataObj.startDate) {
@@ -22,11 +25,18 @@ function EventCards({ dataObj, ticket }) {
     <>
       <div className="eventcards">
         <div className="eventcards-img">
-          <div className="eventcards-booking-btn">
-            <div>
-              <BookingModal dataObj={dataObj} />
+          {isAuthenticated && (
+            <div className="eventcards-booking-btn">
+              <div>
+                <BookingModal dataObj={dataObj} />
+              </div>
             </div>
-          </div>
+          )}
+          {!isAuthenticated && (
+            <div className="eventcards-booking-btn-signin">
+              <div>Sign-in to book this event.</div>
+            </div>
+          )}
           <img className="img" src={eventimg} alt="Event" />
         </div>
         <div className="eventcards-content-grid">
