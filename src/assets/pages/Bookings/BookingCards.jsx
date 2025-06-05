@@ -39,9 +39,19 @@ function BookingCards({ dataObj }) {
                   <span>{dataObj.id}</span>
                 </div>
               </div>
-              <div className="card-ticket-category">
-                <h5>Ticket Category</h5>
-                <span>Premium</span>
+              <div className="card-category-seat-gate">
+                <div className="card-ticket-category">
+                  <h5>Ticket Category</h5>
+                  <span>Premium</span>
+                </div>
+                <div className="card-ticket-category">
+                  <h5>Seat Number</h5>
+                  <span></span>
+                </div>
+                <div className="card-ticket-category">
+                  <h5>Gate</h5>
+                  <span></span>
+                </div>
               </div>
               <div className="card-location">
                 <h5>Location</h5>

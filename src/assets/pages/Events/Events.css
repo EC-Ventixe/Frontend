@@ -31,8 +31,9 @@
 }
 
 .event-btn:hover {
-  background-color: var(--primary-100);
+  background-color: var(--primary-110);
   color: var(--gray-10);
+  transition: all 0.3s ease-in-out;
   .event-btn-nr {
     color: var(--gray-10);
   }
