@@ -38,8 +38,14 @@
   padding-left: 15px;
 }
 
+.topbar-search-input:focus {
+  outline: none;
+  border: 2px solid var(--primary-100);
+}
+
 .topbar-search-input:hover {
-  border: 1px solid var(--secondary-100);
+  outline: none;
+  border: 2px solid var(--primary-50);
 }
 
 .topbar-circle {

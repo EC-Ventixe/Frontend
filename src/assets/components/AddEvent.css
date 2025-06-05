@@ -55,6 +55,16 @@ button.close-btn {
   padding-left: 5px;
 }
 
+.form-input:focus {
+  outline: none;
+  border: solid 2px var(--primary-100);
+}
+
+.form-input:hover {
+  outline: none;
+  border: solid 2px var(--primary-50);
+}
+
 .submit-btn {
   background-color: var(--primary-110);
   color: var(--gray-10);
