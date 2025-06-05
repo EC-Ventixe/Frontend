@@ -1,9 +1,10 @@
-import { useContext } from "react";
 import cookie from "../../../../public/images/COOKIE.jpeg";
+import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import "./Topbar.css";
 
 function Topbar() {
+  const { isAuthenticated } = useContext(AuthContext);
   const { getUserEmail } = useContext(AuthContext);
   const userEmail = getUserEmail();
 
@@ -12,9 +13,17 @@ function Topbar() {
       <div className="topbar-dashboard-content">
         <div>
           <h2>Dashboard</h2>
-          <span className="topbar-dashboard-text">
-            Hello {userEmail ? `${userEmail}` : "Not logged in"}, welcome back!
-          </span>
+          {isAuthenticated && (
+            <span className="topbar-dashboard-text">
+              Hello {userEmail ? `${userEmail}` : "Not logged in"}, welcome
+              back!
+            </span>
+          )}
+          {!isAuthenticated && (
+            <span className="topbar-dashboard-text">
+              Please log in to access your dashboard.
+            </span>
+          )}
         </div>
       </div>
       <div className="topbar-search">
